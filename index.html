@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anadolu Reverb</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top left, rgba(122, 43, 30, 0.55), transparent 35%),
+        radial-gradient(circle at top right, rgba(244, 185, 66, 0.12), transparent 30%),
+        #1b0d0b;
+      color: #f5e6c8;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.22;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 18px 18px;
+      z-index: 1;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 42px;
+      background: rgba(18, 8, 7, 0.94);
+      border-bottom: 1px solid #b06a25;
+      backdrop-filter: blur(8px);
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .logo {
+      font-size: 38px;
+      line-height: 1;
+      letter-spacing: 3px;
+      color: #f4b942;
+      font-weight: 900;
+      text-shadow: 3px 3px #4a1610;
+    }
+
+    .tagline {
+      color: #ff7a2d;
+      font-size: 17px;
+      letter-spacing: 0.5px;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    nav a {
+      color: #f5e6c8;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      color: #ff7a2d;
+    }
+
+    .container {
+      width: min(1500px, 92%);
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero {
+      padding: 62px 0 34px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(52px, 7vw, 108px);
+      line-height: 0.92;
+      color: #f4b942;
+      text-shadow: 5px 5px #42120d;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      font-size: 22px;
+      line-height: 1.55;
+      color: #f8dcc0;
+    }
+
+    .record {
+      width: min(380px, 78vw);
+      aspect-ratio: 1;
+      margin: 0 auto;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle, #d86a2b 0 9%, #f4b942 10% 15%, #2b1715 16% 33%, #090505 34% 100%);
+      border: 12px solid #2a1412;
+      box-shadow: 0 0 55px rgba(244, 185, 66, 0.25);
+      animation: spin 14s linear infinite;
+      position: relative;
+    }
+
+    .record::before {
+      content: "";
+      position: absolute;
+      inset: 42px;
+      border-radius: 50%;
+      border: 3px dashed rgba(245,230,200,0.22);
+    }
+
+    .record::after {
+      content: "ANADOLU\A REVERB";
+      white-space: pre;
+      position: absolute;
+      top: 42%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff1c9;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-align: center;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    section {
+      padding: 54px 0;
+    }
+
+    .section-title {
+      font-size: 46px;
+      color: #f4b942;
+      margin-bottom: 26px;
+      text-shadow: 3px 3px #42120d;
+    }
+
+    .panel {
+      background:
+        linear-gradient(135deg, rgba(60, 25, 18, 0.88), rgba(30, 12, 10, 0.9));
+      border: 1px solid rgba(244, 185, 66, 0.45);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 18px 55px rgba(0,0,0,0.28);
+    }
+
+    .daily-grid {
+      display: grid;
+      grid-template-columns: 0.7fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .album-cover {
+      min-height: 330px;
+      border-radius: 20px;
+      border: 2px solid #d49b41;
+      background:
+        linear-gradient(45deg, rgba(231, 221, 183, 0.95), rgba(245, 239, 211, 0.95)),
+        repeating-linear-gradient(45deg, rgba(0,0,0,.04) 0 4px, transparent 4px 8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-shadow: inset 0 0 35px rgba(80, 35, 20, 0.25);
+      color: #231311;
+      padding: 22px;
+    }
+
+    .album-cover .hardal {
+      font-size: clamp(38px, 4vw, 62px);
+      color: #c23d32;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .album-cover .album-name {
+      font-size: clamp(22px, 2vw, 30px);
+      color: #1b0d0b;
+      font-weight: 900;
+    }
+
+    .kicker {
+      color: #ff7a2d;
+      letter-spacing: 3px;
+      font-weight: 900;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+
+    .daily-content h3 {
+      font-size: 34px;
+      color: #f4b942;
+      margin: 4px 0 16px;
+    }
+
+    .daily-content p {
+      font-size: 18px;
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .soundcloud-box {
+      margin-top: 24px;
+      border: 2px solid #c88432;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 0 25px rgba(244,185,66,0.25);
+      background: #0b0505;
+    }
+
+    .soundcloud-box iframe {
+      display: block;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 15px 26px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #d96c2c, #f28b3d);
+      color: #fff6df;
+      text-decoration: none;
+      font-weight: 900;
+      border: none;
+      box-shadow: 0 0 18px rgba(217,108,44,0.38);
+    }
+
+    .tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+    }
+
+    .tag {
+      border: 1px solid #d96c2c;
+      color: #ffad72;
+      border-radius: 999px;
+      padding: 8px 14px;
+      background: rgba(0,0,0,0.18);
+    }
+
+    .artists-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 18px;
+    }
+
+    .artist-card {
+      display: block;
+      padding: 24px;
+      min-height: 128px;
+      background: rgba(22, 9, 8, 0.62);
+      border: 1px solid rgba(244, 185, 66, 0.35);
+      border-radius: 20px;
+      text-decoration: none;
+      color: #f5e6c8;
+      transition: 0.25s;
+    }
+
+    .artist-card:hover {
+      transform: translateY(-5px);
+      border-color: #ff7a2d;
+      background: rgba(80, 30, 18, 0.82);
+    }
+
+    .artist-card h3 {
+      color: #f4b942;
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .artist-detail {
+      display: grid;
+      gap: 22px;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 14px;
+      font-size: 17px;
+    }
+
+    .info-list strong {
+      color: #f4b942;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      margin-top: 22px;
+    }
+
+    .sub-panel {
+      background: rgba(0,0,0,0.2);
+      border: 1px solid rgba(244,185,66,0.24);
+      border-radius: 18px;
+      padding: 22px;
+    }
+
+    .sub-panel h4 {
+      color: #ff7a2d;
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .sub-panel p, .sub-panel li {
+      font-size: 17px;
+      line-height: 1.65;
+    }
+
+    .sub-panel ul {
+      margin-left: 22px;
+    }
+
+    .notice {
+      margin-top: 22px;
+      color: #d7c4a6;
+      font-size: 14px;
+      line-height: 1.55;
+      border-top: 1px solid rgba(244,185,66,0.22);
+      padding-top: 16px;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 30px 0;
+      border-top: 1px solid rgba(244,185,66,0.38);
+      color: #cdb38e;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (max-width: 980px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 18px 22px;
+      }
+
+      nav {
+        justify-content: flex-start;
+        gap: 14px;
+      }
+
+      .hero,
+      .daily-grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .logo {
+        font-size: 30px;
+      }
+
+      .tagline {
+        font-size: 14px;
+      }
+
+      .album-cover {
+        min-height: 240px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo">ANADOLU REVERB</div>
+      <div class="tagline">Turkish Psychedelic & Anadolu Rock Archive</div>
+    </div>
+
+    <nav>
+      <a href="#ana-sayfa">Ana Sayfa</a>
+      <a href="#sanatcilar">Sanatçılar</a>
+      <a href="#gunun-plagi">Günün Plağı</a>
+      <a href="#radyo">Radyo</a>
+      <a href="#hakkimizda">Hakkımızda</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section id="ana-sayfa" class="hero">
+      <div>
+        <h1>Anadolu’nun Yankısı</h1>
+        <p>
+          Türkçe psychedelic rock, Anadolu rock, progresif rock, eski kasetler,
+          unutulmuş plaklar ve geceye karışan analog sesler burada buluşuyor.
+        </p>
+        <a class="btn" href="#radyo">Radyoyu Başlat</a>
+      </div>
+      <div class="record" aria-label="Dönen plak animasyonu"></div>
+    </section>
+
+    <section id="gunun-plagi">
+      <h2 class="section-title">Günün Plağı</h2>
+
+      <div class="panel daily-grid">
+        <div>
+          <div class="album-cover">
+            <div>
+              <span class="hardal">HARDAL</span>
+              <span class="album-name">Nasıl? Ne Zaman?</span>
+            </div>
+          </div>
+
+          <div class="tags">
+            <span class="tag"># Anadolu Rock</span>
+            <span class="tag"># Psychedelic</span>
+            <span class="tag"># Progressive</span>
+            <span class="tag"># 70s</span>
+          </div>
+        </div>
+
+        <div class="daily-content">
+          <div class="kicker">Günün Plağı</div>
+          <h3>Hardal — Gece Vakti</h3>
+
+          <p>
+            Anadolu rock ile progressive öğeleri birleştiren Hardal,
+            Türkiye’de psychedelic atmosferin en özgün temsilcilerinden biri oldu.
+          </p>
+
+          <p>
+            Gitarların yankısı, analog dokular ve melankolik vokaller;
+            gecenin içinde kaybolan eski bir kaset hissi yaratıyor.
+          </p>
+
+          <div class="soundcloud-box">
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A1059916609&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+          </div>
+
+          <a class="btn" href="https://soundcloud.com/hardal-music/gece-vakti-1" target="_blank" rel="noopener">
+            SoundCloud’da Dinle
+          </a>
+
+          <p class="notice">
+            Not: Bu sitede müzik dosyası barındırılmaz. Parçalar, SoundCloud’un sağladığı resmi gömme oynatıcı üzerinden dinletilir.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sanatcilar">
+      <h2 class="section-title">Sanatçılar</h2>
+
+      <div class="artists-grid">
+        <a class="artist-card" href="#hardal">
+          <h3>Hardal</h3>
+          <p>Progresif rock, psikedelik rock, Anadolu rock.</p>
+        </a>
+
+        <a class="artist-card" href="#rana-alagoz">
+          <h3>Rânâ Alagöz</h3>
+          <p>Türk pop tarihinin zarif ve nostaljik sesi.</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="hardal">
+      <h2 class="section-title">Hardal</h2>
+
+      <div class="panel artist-detail">
+        <p>
+          Hardal, 1970’lerin sonlarında İstanbul’da kurulan Türk progresif rock grubudur.
+          Anadolu ezgilerini psikedelik rock ve hard rock ögeleriyle harmanlayarak
+          Türkiye’nin yeraltı müzik sahnesinde özgün bir yer edinmiştir.
+          Grubun müziği, Batı enstrümanlarıyla sentezlenen Doğu melodileri ve
+          felsefi sözleriyle dikkat çeker.
+        </p>
+
+        <div class="sub-panel">
+          <h4>Temel Bilgiler</h4>
+          <div class="info-list">
+            <div><strong>Kuruluş:</strong> 1976, İstanbul</div>
+            <div><strong>Üyeler:</strong> Cahit Kukul, Aydın Şencan, Sedat Avcı, Şükrü Yüksel</div>
+            <div><strong>Tarz:</strong> Progresif rock, psikedelik rock, Anadolu rock</div>
+            <div><strong>En bilinen albümler:</strong> Nasıl? Ne Zaman? (1979), Nereden Nereye! (1982), Yeniden Doğuş (1999)</div>
+            <div><strong>Spotify aylık dinleyici:</strong> Yaklaşık 114.000 (2025)</div>
+          </div>
+        </div>
+
+        <div class="two-col">
+          <div class="sub-panel">
+            <h4>Kuruluş ve Erken Dönem</h4>
+            <p>
+              Hardal, 1970’lerin ortasında Türkiye’de siyasi ve kültürel çalkantıların
+              yaşandığı bir dönemde kuruldu. Cahit Kukul’un öncülüğünde oluşan grup,
+              Batı’daki progresif rock akımını Anadolu ezgileriyle buluşturmayı hedefledi.
+              İlk albümleri Nasıl? Ne Zaman? (1979), dönemin baskıcı ortamına rağmen
+              yaratıcı besteleriyle Türk rock tarihinde kült statüsüne ulaştı.
+            </p>
+          </div>
+
+          <div class="sub-panel">
+            <h4>Müzikal Tarz ve Etkiler</h4>
+            <p>
+              Grup, uzun gitar soloları, senfonik yapıdaki şarkı düzenlemeleri ve doğuya
+              özgü makamlarla şekillenmiş melodik yapısıyla tanınır. Nasıl? Ne Zaman?
+              ve Nereden Nereye! albümleri, dönemin diğer öncüleri Erkin Koray, Cem Karaca
+              ve Barış Manço’yla birlikte Anadolu rock sahnesinin yönünü belirleyen eserler
+              arasında sayılır.
+            </p>
+          </div>
+        </div>
+
+        <div class="sub-panel">
+          <h4>Yeniden Doğuş ve Miras</h4>
+          <p>
+            Grup, 1999’da Yeniden Doğuş albümüyle geri dönse de ticari başarı elde edemedi.
+            Buna karşın Hardal’ın çalışmaları, 2000’lerden itibaren yeniden keşfedilerek
+            Türkiye’nin progresif rock mirasının temel taşlarından biri olarak kabul edilmiştir.
+            Günümüzde şarkıları “Gece Vakti” ve “Leyla” gibi parçalar çevrimiçi platformlarda
+            sıkça dinlenmeye devam etmektedir.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="rana-alagoz">
+      <h2 class="section-title">Rânâ Alagöz</h2>
+
+      <div class="panel">
+        <div class="sub-panel">
+          <h4>Türk Pop ve Anadolu Esintisinin Zarif Sesi</h4>
+          <p>
+            Rânâ Alagöz, 1960’ların sonlarından itibaren Türk pop müziğinin zarif,
+            içten ve hafif hüzünlü seslerinden biri olarak hafızalarda yer etti.
+            Ağabeyi Selçuk Alagöz ile birlikte sahne aldığı dönemlerde,
+            Anadolu ezgilerini modern pop ve orkestral düzenlemelerle buluşturan
+            özel bir müzikal çizgi oluşturdu.
+          </p>
+          <p>
+            Onun sesinde dönemin gençlik heyecanı, eski radyoların sıcaklığı ve şehirli
+            bir nostaljinin ince duygusu birlikte duyulur. Anadolu Reverb arşivinde
+            Rânâ Alagöz, Türkçe popun Anadolu’ya bakan zarif yüzlerinden biri olarak yer alıyor.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="radyo">
+      <h2 class="section-title">Radyo</h2>
+
+      <div class="panel">
+        <div class="daily-content">
+          <div class="kicker">Anadolu Reverb Radyo</div>
+          <h3>Anadolu Reverb Radyo</h3>
+          <p>
+            Anadolu rock, Türkçe psikedelik ve progresif rock seçkileri.
+            Parçalar SoundCloud playlist oynatıcısı üzerinden site içinde çalar.
+          </p>
+
+          <div class="soundcloud-box">
+            <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A1028868649&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+          </div>
+
+
+          <div class="sub-panel" style="margin-top:24px;">
+            <h4>Cem Karaca Seçkisi</h4>
+            <p>
+              Anadolu Reverb Radyo içinde Cem Karaca için hazırlanmış ayrı dinleme listesi.
+              Parçalar SoundCloud playlist oynatıcısı üzerinden site içinde çalar.
+            </p>
+            <div class="soundcloud-box">
+              <iframe width="100%" height="450" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%253Aplaylists%253A2235581906&color=%23ff5500&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"></iframe>
+            </div>
+            <a class="btn" href="https://soundcloud.com/cenk-kurt-903054636/sets/anadolu-reverb-radyo-cem" target="_blank" rel="noopener">
+              SoundCloud’da Aç
+            </a>
+          </div>
+
+          <a class="btn" href="#gunun-plagi">Günün Plağına Git</a>
+
+          <p class="notice">
+            SoundCloud oynatıcısının içindeki bazı logo/paylaşım bağlantıları kullanıcıyı SoundCloud’a yönlendirebilir.
+            Site tarafında müzik dosyası barındırılmadığı için en güvenli kullanım resmi embed oynatıcıdır.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="hakkimizda">
+      <h2 class="section-title">Hakkımızda</h2>
+
+      <div class="panel">
+        <p>
+          Anadolu Reverb; Türkçe psychedelic, Anadolu rock ve progresif rock kültürünü
+          nostaljik bir web arşivi estetiğiyle sunmayı amaçlayan dijital bir müzik sayfasıdır.
+          Site, müzik dosyalarını kendi sunucusunda barındırmaz; dinleme alanlarında SoundCloud
+          gibi platformların resmi gömme oynatıcıları kullanılır.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Anadolu Reverb © 2026 | Turkish Psychedelic & Anadolu Rock Archive
+  </footer>
+</body>
+</html>
