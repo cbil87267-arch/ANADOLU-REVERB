@@ -1,15 +1,12 @@
-ANADOLU REVERB - ALTIN MIKROFON FINAL PAKET
+ANADOLU REVERB - ALTIN MIKROFON PLAYLIST FINAL
 
-Kok dizindeki dosyalar:
-- index.html
-- altin-mikrofon-1965.html
-- README.txt
-- assets/altin-mikrofon-1965/*.jpg
-
-Yapilanlar:
-- Ana sayfaya Yarismalar linki eklendi.
-- Altin Mikrofon 1965 sayfasi eklendi.
-- Google Drive seslendirme oynaticisi eklendi.
-- PDF'teki 27 sayfa JPG galeri olarak eklendi.
-- Yayin metni sayfaya eklendi.
-- Mobil uyumlu tasarim yapildi.
+Yapılanlar:
+- Altın Mikrofon 1965 sayfasındaki PDF/JPG görsel galeri kaldırıldı.
+- Google Drive seslendirme oynatıcısı korundu.
+- SoundCloud playlist eklendi:
+  Anadolu Reverb Radyo - Altın Mikrofon 1965
+- Yayın metni korundu.
+- Kök dizin temizdir:
+  index.html
+  altin-mikrofon-1965.html
+  README.txt
