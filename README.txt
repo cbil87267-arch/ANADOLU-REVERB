@@ -1,21 +1,15 @@
-ANADOLU REVERB - GÜNCEL RADYO PAKETİ
+ANADOLU REVERB - ALTIN MIKROFON FINAL PAKET
 
-İçerik:
+Kok dizindeki dosyalar:
 - index.html
+- altin-mikrofon-1965.html
+- README.txt
+- assets/altin-mikrofon-1965/*.jpg
 
-Güncellemeler:
-- Menüde sadece Ana Sayfa, Sanatçılar, Günün Plağı, Radyo, Hakkımızda var.
-- Hardal ve Rânâ Alagöz menüden kaldırıldı.
-- Sanatçılar bölümünde alfabetik listeye alındı.
-- Hardal sayfası eklendi.
-- Rânâ Alagöz sayfası eklendi.
-- Günün Plağı bölümüne Hardal - Gece Vakti SoundCloud embed eklendi.
-- Radyo bölümüne Anadolu Reverb Radyo SoundCloud playlist embed eklendi.
-
-Netlify:
-Bu klasörü Netlify'ye sürükleyip bırakman yeterli.
-
-
-Yeni Güncelleme:
-- Radyo bölümüne 'Cem Karaca Seçkisi' ayrı SoundCloud playlist olarak eklendi.
-- SoundCloud embed ayarlarında yorum ve teaser kapatıldı.
+Yapilanlar:
+- Ana sayfaya Yarismalar linki eklendi.
+- Altin Mikrofon 1965 sayfasi eklendi.
+- Google Drive seslendirme oynaticisi eklendi.
+- PDF'teki 27 sayfa JPG galeri olarak eklendi.
+- Yayin metni sayfaya eklendi.
+- Mobil uyumlu tasarim yapildi.
