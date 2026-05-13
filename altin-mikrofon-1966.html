@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Altın Mikrofon 1966 | Anadolu Reverb</title>
+  <style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Georgia,"Times New Roman",serif;background:radial-gradient(circle at top left,rgba(122,43,30,.55),transparent 35%),radial-gradient(circle at top right,rgba(244,185,66,.12),transparent 30%),#1b0d0b;color:#f5e6c8;min-height:100vh}
+header{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:18px 42px;background:rgba(18,8,7,.94);border-bottom:1px solid #b06a25;backdrop-filter:blur(8px)}
+.brand{display:flex;flex-direction:column;gap:4px}.logo{font-size:34px;line-height:1;letter-spacing:3px;color:#f4b942;font-weight:900;text-shadow:3px 3px #4a1610}.tagline{color:#ff7a2d;font-size:16px;letter-spacing:.5px}
+nav{display:flex;gap:22px;align-items:center;flex-wrap:wrap;justify-content:flex-end}nav a{color:#f5e6c8;text-decoration:none;font-weight:700;font-size:16px}nav a:hover{color:#ff7a2d}
+.container{width:min(1320px,92%);margin:0 auto}.hero{padding:58px 0 32px}.kicker{display:inline-block;color:#ff7a2d;letter-spacing:3px;font-weight:900;text-transform:uppercase;padding:8px 14px;border:1px solid rgba(255,122,45,.55);border-radius:999px;background:rgba(0,0,0,.2);margin-bottom:18px}
+h1{font-size:clamp(42px,7vw,86px);line-height:.95;color:#f4b942;text-shadow:5px 5px #42120d;margin-bottom:20px}h2{color:#f4b942;font-size:clamp(28px,4vw,44px);margin-bottom:18px;text-shadow:3px 3px #42120d}.lead{max-width:940px;font-size:22px;line-height:1.55;color:#f8dcc0}
+.panel{background:radial-gradient(circle at top right,rgba(244,185,66,.11),transparent 34%),linear-gradient(135deg,rgba(60,25,18,.88),rgba(30,12,10,.9));border:1px solid rgba(244,185,66,.45);border-radius:24px;padding:28px;box-shadow:0 18px 55px rgba(0,0,0,.28);margin:28px 0}
+.quick-nav{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}.btn{display:inline-block;padding:14px 22px;border-radius:999px;background:linear-gradient(135deg,#d96c2c,#f28b3d);color:#fff6df;text-decoration:none;font-weight:900;box-shadow:0 0 18px rgba(217,108,44,.25)}.btn.secondary{background:transparent;border:2px solid #d96c2c;color:#f4b942}
+.media-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}.audio-box{border:2px solid #c88432;border-radius:18px;overflow:hidden;background:#0b0505;box-shadow:0 0 25px rgba(244,185,66,.25)}.audio-box iframe{display:block;border:0;width:100%}.youtube-wrap{position:relative;padding-top:56.25%;height:0}.youtube-wrap iframe{position:absolute;inset:0;height:100%}
+.text-block{font-size:18px;line-height:1.75;white-space:pre-wrap;color:#f2ddbe;max-height:none;overflow:visible;padding-right:10px}.credit{margin-top:18px;padding-top:14px;border-top:1px solid rgba(244,185,66,.22);color:#d7c4a6;font-size:15px;line-height:1.55}.credit strong{color:#f4b942}
+
+.video-list{display:grid;gap:22px;margin-top:20px}
+.video-card{border:1px solid rgba(244,185,66,.38);border-radius:20px;padding:20px;background:rgba(0,0,0,.22);box-shadow:0 14px 35px rgba(0,0,0,.22)}
+.video-card h3{color:#f4b942;font-size:25px;margin-bottom:8px;text-shadow:2px 2px #42120d}
+.video-card .rank{color:#ff7a2d;font-weight:900;letter-spacing:.5px;margin-bottom:10px}
+.video-card p{font-size:17px;line-height:1.55;color:#f2ddbe;margin-bottom:14px}
+.video-card.missing{border-style:dashed;opacity:.92}
+.video-card.missing .missing-note{color:#d7c4a6;font-size:15px;margin-top:8px}
+
+.youtube-playlist-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;margin-top:20px}
+.youtube-track-card{border:1px solid rgba(244,185,66,.38);border-radius:20px;overflow:hidden;background:rgba(0,0,0,.24);box-shadow:0 16px 40px rgba(0,0,0,.25)}
+.youtube-track-card .track-head{padding:16px 18px;border-bottom:1px solid rgba(244,185,66,.22);background:linear-gradient(135deg,rgba(82,31,20,.72),rgba(20,8,7,.92))}
+.youtube-track-card h3{color:#f4b942;font-size:22px;line-height:1.2;margin-bottom:7px}
+.youtube-track-card p{color:#d7c4a6;font-size:15px;line-height:1.45}
+.youtube-track-card .no-video{padding:22px;color:#d7c4a6;font-size:16px;line-height:1.55}
+.result-list{display:grid;gap:10px;margin:18px 0 0 20px;font-size:18px;line-height:1.6}
+.result-list li::marker{color:#f4b942;font-weight:900}
+.finalist-list{display:grid;gap:10px;margin:18px 0 0 0;font-size:18px;line-height:1.6;list-style:none}
+.finalist-list li{padding-left:18px;border-left:3px solid rgba(244,185,66,.45)}
+@media(max-width:700px){.youtube-playlist-grid{grid-template-columns:1fr}.youtube-track-card h3{font-size:20px}}
+
+footer{margin-top:40px;padding:30px 0;border-top:1px solid rgba(244,185,66,.38);color:#cdb38e;text-align:center}
+@media(max-width:900px){header{flex-direction:column;align-items:flex-start;gap:14px;padding:18px 22px}nav{gap:14px;justify-content:flex-start}.logo{font-size:28px}.tagline{font-size:14px}.lead{font-size:18px}.panel{padding:20px}.media-grid{grid-template-columns:1fr}.text-block{font-size:16px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand"><div class="logo">ANADOLU REVERB</div><div class="tagline">Turkish Psychedelic & Anadolu Rock Archive</div></div>
+    <nav><a href="index.html">Ana Sayfa</a><a href="index.html#yarismalar">Yarışmalar</a><a href="index.html#radyo">Radyo</a><a href="altin-mikrofon-1965.html">1965</a><a href="altin-mikrofon-1966.html">1966</a></nav>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <div class="kicker">Yarışmalar</div>
+      <h1>Altın Mikrofon 1966</h1>
+      <p class="lead">Silüetler, Mavi Işıklar, Selçuk Alagöz, TPAO Batman Orkestrası, Kent Yedilisi, Cahit Oben ve Ali Atasagun Dörtlüsü üzerinden 1966 Altın Mikrofon yarışmasının ayrıntılı arşiv sayfası.</p>
+      <div class="credit"><strong>Arşiv Seçkisi / Derleyen / Hazırlayan:</strong> Cenk Kurt</div>
+      <div class="quick-nav"><a class="btn" href="#seslendirme">Seslendirmeyi Aç</a><a class="btn secondary" href="#kayitlar">YouTube Kayıtlarını Aç</a><a class="btn secondary" href="#metin">Metni Oku</a></div>
+    </section>
+
+    <section id="seslendirme" class="panel">
+      <div class="kicker">Seslendirme</div>
+      <h2>Altın Mikrofon 1965 Seslendirme</h2>
+      <p class="lead" style="font-size:18px;margin-bottom:18px;">YouTube oynatıcısı site içine gömüldü. Mobilde de ekran genişliğine göre otomatik küçülür.</p>
+      <div class="audio-box youtube-wrap"><iframe src="https://www.youtube.com/embed/5H9_Q-s9fN8?si=2AJGy3Yc4Z0eGt1A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    </section>
+
+    <section id="kayitlar" class="panel">
+      <div class="kicker">YouTube Playlist</div>
+      <h2>Altın Mikrofon 1966 Finalist Kayıtları</h2>
+      <p class="lead" style="font-size:18px;margin-bottom:18px;">Eski harici playlist oynatıcısı kaldırıldı. 1966 finalist kayıtları artık YouTube oynatıcılarıyla, sayfa içinde tek tek dinlenebilir.</p>
+
+      <div class="video-list">
+        <article class="video-card">
+          <div class="rank">1. Derece</div>
+          <h3>Silüetler – Lorke Lorke (Y.Ş.) / Dede Efendi 66</h3>
+          <p>1966 yarışmasının birincisi.</p>
+          <div class="audio-box youtube-wrap"><iframe src="https://www.youtube.com/embed/XzDDC7GDt6o" title="Silüetler - Lorke Lorke 1966" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+          <p class="credit" style="margin-top:12px;">Video açılmazsa: <a href="https://www.youtube.com/watch?v=XzDDC7GDt6o" target="_blank" rel="noopener" style="color:#f4b942;font-weight:900;">YouTube’da aç</a></p>
+        </article>
+
+        <article class="video-card">
+          <div class="rank">2. Derece</div>
+          <h3>Mavi Işıklar – Çayır Çimen Geze Geze (Y.Ş.) / Pınarbaşı</h3>
+          <div class="audio-box youtube-wrap"><iframe src="https://www.youtube.com/embed/fuzRnU2Dm4U?si=LFgBEk5Z3rT_432-" title="Mavi Işıklar - Çayır Çimen Geze Geze" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </article>
+
+        <article class="video-card">
+          <div class="rank">3. Derece</div>
+          <h3>Selçuk Alagöz – Ararım / Bahçelere Geldi Bahar (Y.Ş.)</h3>
+          <div class="audio-box youtube-wrap"><iframe src="https://www.youtube.com/embed/9gdHOeyzQcg?si=O-TdX-e4vQTdpfkJ" title="Selçuk Alagöz - Bahçelere Geldi Bahar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </article>
+
+        <article class="video-card">
+          <div class="rank">Diğer Finalist</div>
+          <h3>Cahit Oben – Her Gün Kavga Var (Y.Ş.) / Şey</h3>
+          <div class="audio-box youtube-wrap"><iframe src="https://www.youtube.com/embed/HuczzBcp4CY?si=g_YOZEFBj30Y4YkO" title="Cahit Oben - Her Gün Kavga Var" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </article>
+
+        <article class="video-card">
+          <div class="rank">Diğer Finalist</div>
+          <h3>Ali Atasagun – Yarim (Y.Ş.) / Emine(m)</h3>
+          <div class="audio-box youtube-wrap"><iframe src="https://www.youtube.com/embed/xxakSjF4tiY?si=hnCjZZxX4wMHgyn4" title="Ali Atasagun - Yarim" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </article>
+
+        <article class="video-card">
+          <div class="rank">Diğer Finalist</div>
+          <h3>Kent Yedilisi – Kara Kaşlı Haticem (Y.Ş.) / Mühür Gözlüm</h3>
+          <div class="audio-box youtube-wrap"><iframe src="https://www.youtube.com/embed/-DiWqkBN974?si=7CcxbVFQFfk0LnfJ" title="Kent Yedilisi - Kara Kaşlı Haticem" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </article>
+
+        <article class="video-card">
+          <div class="rank">Diğer Finalist</div>
+          <h3>TPAO Batman Orkestrası – Kaleden Top Atarlar (Y.Ş.) / Fırat Kenarında Yüzen Kayıklar</h3>
+          <div class="audio-box youtube-wrap"><iframe src="https://www.youtube.com/embed/UYKVqSYUe48?si=W4Z4ZsavrSStNz8Q" title="TPAO Batman Orkestrası - Kaleden Top Atarlar" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="metin" class="panel">
+      <div class="kicker">Yayın Metni</div>
+      <h2>Altın Mikrofon 1966 Anlatım Metni</h2>
+      <div class="text-block">ALTIN MİKROFON YARIŞMASI - 1966
+
+Yıldırım Gürses’in tek sesli çok sazlı orkestrasının gövde gösterisinden olsa gerek, 1966 yarışmalarına katılan grupların eleman sayısının 7 kişiyle sınırlandırılmasına karar verildi.
+
+Yarışma kurallarınca önceden plağı çıkmış veya bir başka yarışmada müsabaka parçasını seslendirmiş olanlar yarışmaya katılamayacak ve finalist olamayanların isimleri gizli tutulacaktı. Yarışma başvuruları için son tarih 31 Mart 1966 idi.
+
+Bu yarışmanın ödülleri:
+• 1.ye: 10.000 TL + Altın Mikrofon
+• 2.ye: 5.000 TL
+• 3.ye: 3.000 TL
+• 4.ye: 2.000 TL
+• 5.ye: 1.000 TL
+
+İlk yarışma, birincisinden yani Yıldırım Gürses’ten çok ikincisi ile ses getirmişti. Mavi Işıklar kısa bir zaman içerisinde şöhretin doruklarına tırmanmış ve ismini herkese ezberletmişti. Grubun bu popülerliğini, grubu yaratmış olan Hürriyet de kullanmakta gecikmedi.
+
+Gazete, Nisan ayında ikincisi düzenlenecek olan Altın Mikrofon yarışması ile ilgili duyurularını yaparken, en çok Mavi Işıklar’a yaslandı. Geçen yılın birincisi Yıldırım Gürses, akıllara bile gelmemişti:
+
+“Bugün Türkiye’de bir Mavi Işıklar adı ve orkestrası varsa, bunu doğrudan doğruya Hürriyet’in hazırladığı Altın Mikrofon’a borçluyuz. Fakat biz de, bu ilgiye layık olabilmek için hiçbir zaman çalışmalarımızı ihmal etmeyeceğiz. Tuttuğumuz yolun nankör bir yol olmadığını müzikseverler ilgileriyle bize bol bol ispat ettiler.”
+
+Doğruya doğru; Mavi Işıklar bu yarışma ile ortaya çıkmış ve kendilerini gösterebilmişlerdi. Mavi Işıklar minnet borçlarını Nisan ayında ikincisi yapılacak yarışmaya da katılarak ödemeye çalıştı. Normal olarak, şöhreti bu kadar yaygınlaşmış bir grubun artık herhangi bir yarışmaya katılmaması, kendisini yeniden sınanma durumunda bırakmaması gerekirdi. Ama Mavi Işıklar bu riskin altına girdi ve yarışmaya başvurdu.
+
+1966 yılının yarışmasına 55 orkestra katıldı. İlk elemeler Kervansaray’da yapılmaktaydı. Aralarında Zeki Müren ve Rüçhan Çamay’ın da bulunduğu 46 kişilik ön jüri, dokuz saat fasılasız devam eden müsabaka sonunda yedi orkestranın finale kaldığını açıkladı. Daha önce yapılan açıklamalarla finale beş orkestranın kalacağı duyurulmuş olmasına rağmen, yarışmacılar arasında çok az puan farkı olması nedeniyle bundan vazgeçilmiş ve finalistlerin sayısı yediye çıkarılmıştır.
+
+Belirlenen 7 finalist arasında Ali Atasagun Dörtlüsü, Cahit Oben, Kent Yedilisi, Selçuk Alagöz, Silüetler, Türkiye Petrolleri Anonim Ortaklığı yani TPAO Batman Orkestrası ve elbette Mavi Işıklar finale kalabilen isimler olmuştur.
+
+FİNALİST GRUPLAR VE ŞARKILARI
+
+Silüetler: Lorke Lorke (swing)
+1966 yılındaki Altın Mikrofon yarışmasına Lorke türküsünün Shadows tarzı sert düzenlemesiyle katıldı. Ekibin kadrosu şu şekildeydi: Mesut Aytunca solo gitar, Erol Bilem bas, Rasim Ulusman ritim gitar, Aydın Daruga bateri. Grupta ayrıca Sadık Bütünley de konserlerde solist olarak faaliyet gösteriyordu.
+
+Mavi Işıklar: Çayır Çimen Geze Geze (oriental shake)
+İlk yarışma, birincisinden çok ikincisi ile ses getirmişti. Mavi Işıklar kısa bir zaman içerisinde şöhretin doruklarına tırmanmış ve ismini herkese ezberletmişti. Bu yarışmanın ilki ile ortaya çıkmış ve kendilerini gösterebilmiş olan Mavi Işıklar, minnet borçlarını Nisan ayında ikincisi yapılacak yarışmaya da katılarak ödemeye çalıştı. Bu yarışmada yarışma şarkıları “Çayır Çimen Geze Geze” idi.
+
+Selçuk Alagöz: Bahçelere Geldi Bahar (twist)
+1965 yılındaki gibi 1966 yılında da finalist olan Selçuk Alagöz, topluluğuna kendi ismini vermiştir. 22 yaşındaki Alagöz, İktisat Fakültesi ikinci sınıf talebesi olup blok flüt, solo gitar çaldığı gibi aynı zamanda solisttir. 14 senelik müzik hayatı olan Selçuk Alagöz’ün 16 yaşındaki kardeşi Ali Alagöz de toplulukta elektro gitar ve piyano çalmaktadır. İki senelik bir mazisi olan toplulukta, 7 senedir müzikle meşgul olan 24 yaşındaki Kaya Şalt bas gitar, 20 yaşındaki 4 senelik müzisyen Cahit Berkay ritim gitar, 5 senelik müzisyen 24 yaşındaki Ercüment Güreşin bateri çalmaktadır.
+
+TPAO Batman Orkestrası: Kaleden Top Atarlar (twist)
+Batman’da bulunan TPAO şirketine dışardan çalışmaya gelen mühendis ve teknik elemanlardan 1963’te bir orkestra oluşturulmuştu. Her yıl kadrosu değişen TPAO Orkestrası, 1966’daki bu yarışmaya Semih Özen perküsyon, Ahmet Sayman ritim gitar, Çetin Oral bas gitar, Semih Evin solo gitar kadrosuyla twist tarzındaki “Kaleden Top Atarlar” isimli şarkıyla katıldı.
+
+Kent Yedilisi: Kara Kaşlı Haticem (bossa nova)
+Atilla Baybek, Fikret Güven, Süha Onay, Ersan Durmaz, Necdet Güngör, Tevfik Kunter’den oluşan Kent Yedilisi, bossa nova tarzında besteledikleri “Kara Kaşlı Haticem” şarkısıyla katıldılar. Yedinci eleman hakkında bilgi bulunmamaktadır.
+
+Cahit Oben: Her Gün Kavga Var (swing)
+20 yaşındaki Cahit Oben, bu yarışmaya geçen seneden farklı bir grup oluşturarak katıldı. Solo gitar çalıp solistlik yapan Cahit Oben, yanına davulda 21 yaşındaki Cankut Özgül, bas gitarda Gökhan Torgay ve ritim gitarda Göktuğ Vensürel’i aldı. “Her Gün Kavga Var” adlı enstrümantal bestesiyle finale yükseldi.
+
+Ali Atasagun Dörtlüsü: Yarim (shake)
+6 senedir müzikle uğraşan 19 yaşında lise son öğrencisi Ali Atasagun, 10 ay önce kurduğu orkestrasını 2 ay önce de modern elektro enstrümanlarla donatmıştı. Solo gitar çalıp grubun solistliğini yapan Ali Atasagun, Oğuz Durukan bas gitar, Uğur Dikmen elektro org ve 15 yaşındaki Asım Ekren davul kadrosuyla “Yarim” isimli bestesiyle yarışmaya katıldı.
+
+FİNALE KALAMAYAN BAZI ORKESTRALAR
+
+Finale kalamayan bazı orkestralara Hürriyet Gazetesi’nde yer verildi:
+• Özgün Günay: Kars Havası (slop)
+• Çetin İnöntepe: Postacı (rumba-rock)
+• Erkin Koray: Bir Eylül Akşamı (mambo rock)
+• Gıdık Grubu: Çiğdem Der Ki (shake)
+• Blue Boys / Mavi Çocuklar: Yine Yeşillendi Fındık Dalları (rumba-rock)
+• Boğaziçi Orkestrası: İçin İçin Yanıyor (calypso-rock)
+• Maça Beşlisi: Köylü Kızı (shake)
+• Volkanlar: Kalplere Vur Bir Zımba (shake)
+• Grup Sonya Dores: Kömür Gözlüm
+• Metin Alkanlı: Köylü Kızı
+
+YARIŞMANIN TURNESİ
+
+• 19 Nisan: Eskişehir Kılıçoğlu Sineması
+• 20 Nisan: Ankara Büyük Sinema
+• 21 Nisan: Samsun Konak Sineması
+• 22 Nisan: Ankara Büyük Sinema
+• 23 Nisan: Konya Şahin Sineması
+• 24 Nisan: Adana Erciyes Sineması
+• 25 ve 26 Nisan: İzmir Büyük Sinema
+• 2 Mayıs: İstanbul Renk Sineması
+• 4 Mayıs: Kadıköy Efes Sineması
+• 6 Mayıs: Final Yarışması, Fitaş Sineması
+
+Turne ile birlikte yeni yeni şeyler de öğreniriz. Mavi Işıklar Adana’da ye-ye’ci genç kızları coşturmuştur mesela: “Uzun zamandır ye-ye’ci toplulukların konserlerine hasret kalan Adanalı ye-ye’ci gençlerin hasretliklerini Mavi Işıklar gidermiştir,” gazetelere göre.
+
+Mayıs’ın başında yarışma konvoyu nihayet işini bitirip İstanbul’a döner. İstanbul’un muhtelif yerlerindeki konserleri, Fitaş Sineması’nda yapılan son konser takip eder ve sonuçlar açıklanır. 12 konserde 13.411 oy kullanılmış ve Silüetler 4.563 rey alarak birinci, Mavi Işıklar 2.850 reyle ikinci, Selçuk Alagöz ise 2.382 reyle üçüncü olmuştur.
+
+Yarışmadan sonra Hürriyet verdiği sözü tutar ve yarışmacıların plaklarını da basar. Ama bu plaklar, bir yıl öncesinde olduğu kadar ilgi görmez. Çünkü artık yeterince plağımız vardır ve piyasa geçen yıl olduğu gibi bu işe çok aç değildir.
+
+ÇIKARILAN 45’LİK VE LP PLAKLAR
+
+Açıklama: Y.Ş. = Yarışma Şarkısı
+
+1966 Altın Mikrofon kolektif LP plağı, 18 Temmuz’da finalistlerin plakları Melodi Plak tarafından basılıp Hürriyet tarafından yayınlandı. Bir plak 7,5 TL, yedi plak 52,5 TL’den satışa sunuldu.
+
+İlk 3 dereceye girenler:
+1. Silüetler – Lorke Lorke (Y.Ş.) / Dede Efendi 66
+2. Mavi Işıklar – Çayır Çimen Geze Geze (Y.Ş.) / Pınarbaşı
+3. Selçuk Alagöz – Ararım / Bahçelere Geldi Bahar (Y.Ş.)
+
+Diğer finalistler:
+• Cahit Oben – Her Gün Kavga Var (Y.Ş.) / Şey
+• Ali Atasagun – Yarim (Y.Ş.) / Emine(m)
+• Kent Yedilisi – Kara Kaşlı Haticem (Y.Ş.) / Mühür Gözlüm
+• TPAO Batman Orkestrası – Kaleden Top Atarlar (Y.Ş.) / Fırat Kenarında Yüzen Kayıklar
+</div>
+    </section>
+  </main>
+  <footer>Anadolu Reverb · Altın Mikrofon Arşivi · Hazırlayan: Cenk Kurt</footer>
+</body>
+</html>

@@ -867,6 +867,79 @@
       line-height: 1.55;
     }
 
+
+    /* YARIŞMALAR ANA SAYFA KARTLARI */
+    .competition-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      margin-top: 20px;
+    }
+
+    .competition-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 260px;
+      padding: 24px;
+      border-radius: 22px;
+      border: 1px solid rgba(244,185,66,.42);
+      background:
+        radial-gradient(circle at top right, rgba(244,185,66,.16), transparent 36%),
+        linear-gradient(135deg, rgba(82,31,20,.92), rgba(18,8,7,.96));
+      box-shadow: 0 16px 45px rgba(0,0,0,.28);
+      text-decoration: none;
+      color: #f5e6c8;
+      transition: .25s ease;
+    }
+
+    .competition-card:hover {
+      transform: translateY(-6px);
+      border-color: #f4b942;
+      box-shadow: 0 0 34px rgba(244,185,66,.20);
+    }
+
+    .competition-year {
+      color: #ff7a2d;
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .competition-card h3 {
+      color: #f4b942;
+      font-size: 31px;
+      line-height: 1.08;
+      margin-bottom: 14px;
+      text-shadow: 3px 3px #42120d;
+    }
+
+    .competition-card p {
+      font-size: 17px;
+      line-height: 1.55;
+      color: #f2ddbe;
+      margin-bottom: 18px;
+    }
+
+    .competition-meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: auto;
+    }
+
+    .competition-meta span {
+      border: 1px solid rgba(255,122,45,.48);
+      color: #ffad72;
+      border-radius: 999px;
+      padding: 7px 12px;
+      background: rgba(0,0,0,.18);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
     footer {
       margin-top: 40px;
       padding: 30px 0;
@@ -921,7 +994,7 @@
       <a href="#ana-sayfa">Ana Sayfa</a>
       <a href="#sanatcilar">Sanatçılar</a>
       <a href="#radyo">Radyo</a>
-      <a href="altin-mikrofon-1965.html">Yarışmalar</a>
+      <a href="#yarismalar">Yarışmalar</a>
       <a href="#hakkimizda">Hakkımızda</a>
     </nav>
   </header>
@@ -1022,6 +1095,45 @@
           <p class="notice">
             Not: Bu sitede müzik dosyası barındırılmaz. Parçalar, SoundCloud’un sağladığı resmi gömme oynatıcı üzerinden dinletilir.
           </p>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="yarismalar">
+      <h2 class="section-title">Yarışmalar</h2>
+      <div class="panel">
+        <div class="kicker">Altın Mikrofon Arşivi</div>
+        <h3 style="font-size:clamp(30px,4vw,52px);color:#f4b942;text-shadow:3px 3px #42120d;margin-bottom:14px;">Altın Mikrofon Yarışmaları</h3>
+        <p style="font-size:18px;line-height:1.65;color:#f8dcc0;max-width:980px;">
+          Hürriyet’in Altın Mikrofon yarışmaları; Anadolu ezgilerinin beat, twist, bossa nova, swing ve rock düzenlemeleriyle yeniden kurulduğu dönemin en önemli müzik hafızalarından biridir.
+        </p>
+
+        <div class="competition-grid">
+          <a class="competition-card" href="altin-mikrofon-1965.html">
+            <div>
+              <div class="competition-year">1965</div>
+              <h3>Altın Mikrofon 1965</h3>
+              <p>Yarışmanın ilk yılı; finalistler, turne, jüri, halk oylaması ve Türk pop tarihindeki kırılma anı.</p>
+            </div>
+            <div class="competition-meta">
+              <span>Seslendirme</span>
+              <span>Yayın metni</span>
+            </div>
+          </a>
+
+          <a class="competition-card" href="altin-mikrofon-1966.html">
+            <div>
+              <div class="competition-year">1966</div>
+              <h3>Altın Mikrofon 1966</h3>
+              <p>Silüetler, Mavi Işıklar, Selçuk Alagöz, TPAO Batman Orkestrası ve 1966 turnesinin ayrıntılı arşiv sayfası.</p>
+            </div>
+            <div class="competition-meta">
+              <span>YouTube</span>
+              <span>SoundCloud</span>
+              <span>Arşiv metni</span>
+            </div>
+          </a>
         </div>
       </div>
     </section>
